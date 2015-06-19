@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+	id="cordova-plugin-cdv-shared-preferences"
+	version="0.6.1">
+
+	<name>cdvSharedPreferences</name>
+	<description>cdv Shared Preferences Plugin </description>
+	<license>EYC</license>
+	<keywords>preferences</keywords>
+
+	<js-module src="www/cdvSharedPreferences.js">
+		<clobbers target="plugins.cdvSharedPreferences" />
+	</js-module>
+
+
+	<!-- android -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="cdvSharedPreferences" >
+				<param name="android-package" value="com.eyc.plugins.CDVSharedPreferences"/>
+			</feature>
+		</config-file>
+
+		<source-file src="src/android/CDVSharedPreferences.java" target-dir="src/com/eyc/plugins/CDVSharedPreferences" />
+	</platform>
+</plugin>
